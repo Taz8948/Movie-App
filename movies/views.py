@@ -9,7 +9,7 @@ def home_page(request):
     stuff_for_frontend = {'search_result': search_result}
     return render(request, 'movies/movies_stuff.html', stuff_for_frontend)
 
-<!-- Creating Movies -->
+    
 def create(request):
     if request.method == 'POST':
         data = {
@@ -32,7 +32,7 @@ def create(request):
             messages.warning(
                 request, 'Got an error when trying to create new movie: {}'.format(e))
     return redirect('/')
-<!-- Editing Movies -->
+
 def edit(request, movie_id):
     if request.method == 'POST':
         data = {
@@ -53,7 +53,7 @@ def edit(request, movie_id):
             messages.warning(
                 request, 'Got an error when trying to update movie: {}'.format(e))
         return redirect('/')
-<!-- Deleting Movies -->
+
 def delete(request, movie_id):
     try:
         movie_obj = Movie.objects.get(id=movie_id)
