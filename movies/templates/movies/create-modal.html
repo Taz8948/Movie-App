@@ -10,7 +10,7 @@
 			</div>
             <div class="modal-body">
             	<form action="{% url 'create' %}" method="post">
-                    {% csrf_token %}
+                    {% csrf_token %} <!-- To the Left is code that secures the form and hackers cannot retrieve data -->
                     <div class="form-group">
                         <label for="movieName">Name</label>
                         <input type="text" class="form-control" id="movieName" placeholder="Enter name" name="name" required/>
